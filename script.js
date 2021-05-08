@@ -1,44 +1,74 @@
-document.addEventListener("DOMContentLoaded", () => {
 
-	const text = document.getElementById("text");
-	text.style.display = "none";
+//variable declaration in JavaScript, quite flexible 
+//no explicit data type needed 
+//python version 
+// index = 0 
+var index = 0;
 
-	const button = document.getElementById("button");
-	button.addEventListener("click", changeText);
-
-	const imageButton = document.getElementById("imageButton");
-	imageButton.addEventListener("click", changeImage);
-
-	var index = 0;
-
-
-	function changeText(){
-		text.style.display = "block";
-		text.innerHTML = "Text Has Changed";
-	}
-
-	function changeImage(){
-		const image = document.getElementById("img");
-
-		if(index == 0){
-		//apple 1
-		image.src = "https://sc04.alicdn.com/kf/HTB1HHDUbinrK1RjSsziq6xptpXa2.jpg";
-		//index = index + 1
-		//index += 1;
-		index++;
-	}else if(index == 1){
-		//kiwi 2
-		image.src = "https://upload.wikimedia.org/wikipedia/commons/d/d3/Kiwi_aka.jpg";
-		index++;
-	}else if (index == 2){
-		//banana 0
-		image.src = "https://cdn.mos.cms.futurecdn.net/42E9as7NaTaAi4A6JcuFwG-1200-80.jpg";
-		index = 0;
-	}
-
+//example for var 
+function varTest (){
+	var index2 = 1;
+	console.log("Test 1 -> Variable 2 is equals to: " + index);
 }
 
+function varTest2 (){
+	console.log("Test 2 -> Variable 2 is equals to:");
+	//var is function scope
+	console.log(index2);
+}
+
+function letTest () {
+	let number = 5;
+	console.log(number); 
+
+	//start from i=0,
+	//end at i<5,
+	//increment by one every loop
+	for (let i=0; i<5; i++){
+		console.log(i);
+	}
+
+	//block scope - let does not exist outside of the closest pair of curly braces
+	console.log(i);
+}
+
+function constTest(){
+	const age = 30;
+	console.log(age);
+	age++;
+}
+
+//function call in JavaScript
+varTest();
+//varTest2();
+//letTest();
+//constTest();
+
+//JavaScript callback, calling functions when a specific event happens  
+document.addEventListener("click", varTest);
+
+//anonymous functions 
+document.addEventListener("click", function (){
+	console.log("This is coming from a nameless function");
 });
+
+//arrow functions 
+document.addEventListener("click", () => {
+	console.log("This is coming from an arrow function");
+});
+
+
+let addition = function (a, b){
+	return a+b;
+};
+
+//events in JavaScript 
+//click 
+//DOMContentLoaded
+//mousedown - left mouse click 
+//keydown 
+//mouseover
+
 
 
 
